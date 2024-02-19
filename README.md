@@ -1,4 +1,4 @@
-# Technical Test - Frontend Developer
+# Technical Test - Fullstack Developer
 
 Welcome to the technical test for the Fullstack Developer position at Traxi!
 
