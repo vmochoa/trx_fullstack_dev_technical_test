@@ -14,8 +14,15 @@ router.post("/vehicles", (req, res) => {
 
 //get all vehicles
 router.get("/vehicles", (req, res) => {
+
+  let query = {};
+  
+  for (let param in req.query) {
+    query[param] = req.query[param];
+  }
+
   vehicleSchema
-    .find()
+    .find(query)
     .then((data) => res.json(data))
     .catch((err) => res.json({ message: err }));
 });

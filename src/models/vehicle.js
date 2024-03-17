@@ -13,6 +13,14 @@ const vehicleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  tipo: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: Boolean,
+    required: true,
+  },
   asientos: {
     type: Number,
     required: true,
