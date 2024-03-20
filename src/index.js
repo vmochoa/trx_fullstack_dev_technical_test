@@ -15,7 +15,8 @@ app.use('/api',vehicleRoutes)
 
 //routes
 app.get('/', (req, res) => {
-  res.send('vehiculos');
+  //redirecto to the api routes
+  res.redirect('/api/vehicles');
 });
 
 //mongodb conection
