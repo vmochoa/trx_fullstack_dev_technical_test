@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const vehicleSchema = new mongoose.Schema({
-  placa: {
+  plate: {
     type: String,
     required: true,
   },
@@ -9,11 +9,14 @@ const vehicleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  vim: {
+  vim: { 
     type: String,
     required: true,
+    minlength: 10,
+    maxlength: 20
+   
   },
-  tipo: {
+  type: {
     type: String,
     required: true,
   },
@@ -21,34 +24,42 @@ const vehicleSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  asientos: {
+  seats: {
     type: Number,
     required: true,
+    min: 1,
   },
-  seguro: {
+  insurance: {
     type: String,
     required: true,
   },
-  segure_numebr: {
+  insurance_number: {
     type: String,
     required: true,
   },
-  BRAND: {
+  brand: {
     type: String,
     required: true,
   },
-  MODEL: {
+  model: {
     type: String,
     required: true,
   },
-  YEAR: {
+  year: {
     type: String,
     required: true,
+    validate: {
+      validator: function(v) {
+        return /^\d{4}$/.test(v) && parseInt(v, 10) >= 1900 && parseInt(v, 10) <= new Date().getFullYear();
+      },
+      message: props => `${props.value} no es un año válido!`
+    }
   },
-  COLOR: {
+  color: {
     type: String,
     required: true,
   },
 });
 
-module.exports = mongoose.model("Vehicle", vehicleSchema);
+
+module.exports = mongoose.model('Vehicle', vehicleSchema);
