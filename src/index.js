@@ -15,7 +15,7 @@ app.use('/api',vehicleRoutes)
 
 //routes
 app.get('/', (req, res) => {
-  res.send('vehiculos');
+  res.send('Ruta Inicial Ok');
 });
 
 //mongodb conection
