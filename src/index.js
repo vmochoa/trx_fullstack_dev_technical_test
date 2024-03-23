@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 //mongodb conection
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb+srv://devvochoa:pk3kcxxmtTacAlfr@cluster0.tqz4zpz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 .then(() => console.log("conected to mongodb"))
 .catch((err)=> console.log(err));
 
